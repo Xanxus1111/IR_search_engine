@@ -8,6 +8,17 @@ Put the file and dataset folder under the same folder and run it
 ```
 python preprocess.py
 ```
+## Create index and import data to elastic search engine
+
+**I found that when I import data many times, elastic would not delete the repeated data. So just run this file one time**
+
 After start elastic search engine, run createIndex.py
 Creat index and import data to elastic search engine.
+```
+python creatIndex.py
+```
 
+## Empty data
+```
+python emptyData.py
+```
