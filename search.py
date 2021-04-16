@@ -20,19 +20,33 @@ def search(query,label = '__label__1'):
                 "minimum_should_match": 1,
             }
         }
+        ## without sentiment analysis
+        # "query": {
+        #     "bool": {
+        #         "should": [
+        #             {"match": {"review": query}}
+        #         ],
+        #         "minimum_should_match": 1,
+        #     }
+        # }
 
     }
     es = Elasticsearch()
     res = es.search(index='products', body=query_contains, size=10)
 
     id = []
+    res_dict = {}
     for each in res['hits']['hits'][:10]:
         if each['_source']['id'] not in id:
             id.append(each['_source']['id'])
         # print(each['_source']['id'])
             print(each['_score'],each['_source']['label'])
             print(each['_source']['review'])
-    return res
+
+            res_dict[str(each['_score'])+" "+each['_source']['label']] = '\n'+each['_source']['review']
+
+
+    return res_dict
 
 
 def get_predictions(comment):
