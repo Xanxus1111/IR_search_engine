@@ -35,5 +35,11 @@ python search.py
 ![image](https://user-images.githubusercontent.com/15157064/114917964-22ea7200-9e59-11eb-8313-66aa1f17c498.png)
 ![image](https://user-images.githubusercontent.com/15157064/114917975-24b43580-9e59-11eb-8c80-02bf23b9705b.png)
 
+## Runing flask
+```
+python searchWebsite.py
+```
+
+![Uploading image.png…]()
 
 
