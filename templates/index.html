@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Search Engine</title>
+    <style>
+        div.wrapper {
+            height: 250px;
+            width: auto;
+            background: white;
+            margin: auto;
+        }
+
+        /*div.img-div {*/
+        /*    border: 1px solid black;*/
+        /*    height: 200px;*/
+        /*    width: 550px;*/
+        /*    background: white;*/
+        /*    margin: auto;*/
+        /*}*/
+    </style>
+
+</head>
+<body>
+<div class="wrapper">
+        <h4>{{context.title}}</h4>
+
+
+        <div class="form-div">
+            <form method="POST"action="/search_method">
+                <input type="search" name="keyword" >
+                <input type="submit" value="搜索">
+            </form>
+        </div>
+        <p>
+            Result:
+        </p>
+        <ul>
+            {% for i in context.the_reviews %}
+            <li><span>{{ i }}</span>{{ context.the_reviews[i] }}</li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</body>
+</html>
